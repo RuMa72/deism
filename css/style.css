@@ -1,0 +1,273 @@
+/*===== Variabili =====*/
+
+:root {
+  --azzurro: #19BFF2; /* hsl(195, 90%, 95%) */
+  --azzurro-scuro: #128CB2; /* hsl(195, 90%, 70%) */
+  --azzurro-chiaro: #66DBFF; /* hsl(195, 60%, 100%) */
+  --blu-medio: #266A7F; /* hsl(195, 70%, 60%) */
+  --blu-scuro: #041E26; /* hsl(195, 90%, 15%) */
+  --blu-sfondo: #063140;  /* hsl(195, 90%, 25%) */
+}
+
+/*===== Cursore =====*/
+
+* {
+  cursor: none;
+}
+
+.cursor {
+  z-index: 100;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  height: 60px;
+  width: 60px;
+  background-image: url("cursor_auto.png");
+  background-size: contain;
+}
+
+.cursor.gold {
+  background-image: url("cursor_hover.png");
+}
+
+@media (hover: none) {
+  .cursor {display: none}
+}
+
+/*===== Sfondo =====*/
+
+/*body {
+  background: url("mattoni.png") var(--blu-sfondo);
+  background-size: 400px;
+  background-repeat: repeat;
+  background-blend-mode: multiply;
+}*/
+
+
+.mattoni::before{
+  content: "";
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  position: absolute;
+  background: url("mattoni.png") var(--blu-sfondo);
+  background-size: 400px;
+  background-repeat: repeat;
+  background-blend-mode: multiply;
+  z-index: -1;
+}
+
+.colore::before{
+  content: "";
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  position: absolute;
+  background: var(--blu-sfondo);
+}
+
+
+
+
+/*===== Font =====*/
+
+body {
+  font-family: 'Domine', serif;
+  letter-spacing: 2px;
+}
+
+/*= Dimensioni =*/
+
+h1 {font-size: clamp(60px, 5vw, 70px)}
+h2 {font-size: clamp(50px, 4vw, 60px)}
+h3 {font-size: clamp(40px, 3.5vw, 60px)}
+p, a {font-size: clamp(1.6em, 1.3vw, 2em)}
+.button {font-size: clamp(1.4em, 1.25vw, 1.8em)}
+li a {font-size: 1.4em}
+
+/*= Caratteristiche =*/
+
+a {text-decoration: none;}
+h1, h2, h3{text-transform: uppercase; color: var(--azzurro); weight: 700}
+h4, h5, p{color: white; padding-bottom: 30px; line-height: 1.5em}
+
+/*= Pulsanti =*/
+
+.button{
+  padding: 0.8em 1.3em;
+  background: none;
+  border: 2px solid var(--azzurro);
+  color: var(--azzurro);
+  display: inline-block;
+  border-radius: 500px;
+  transition: 0.5s;
+}
+
+.button:hover {
+  background: var(--azzurro);
+  color: white;
+  transition: 0.5s;
+}
+
+@media (max-width: 768px) {
+  .big-text{font-size: 40px;}
+}
+
+/*===== Sezioni =====*/
+
+section {
+  margin: auto;
+  height: auto;
+  min-height: 100vh;
+  width: min(1350px, 100vw - 50px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 3%;
+}
+
+@media screen and (min-width: 1921px) {
+  section {
+    width: 70vw;
+  }
+}
+
+/*==============
+     Header
+ =============*/
+
+.bg_header {
+  display: flex;
+  background: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,.8));
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+header {
+  width: 100%;
+  max-width: 1350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 6vh;
+  padding: 30px;
+}
+
+.logo{
+  z-index: 1;
+}
+
+.menu{
+  transition: all 0.75s cubic-bezier(0.5, 0, 0, 1);
+  max-width: 75%;
+  z-index: 0;
+  width: auto;
+}
+
+.menu li{display: inline-block;}
+.menu li a{color: #fff; padding: 15px; display: block;}
+
+.hamburger{display: none}
+
+@media (max-width: 910px) {
+
+  .cta{display: none;}
+  .menu{position: absolute; top: 0; right: -100%; background: var(--blu-medio); height: 100vh; width: 50vw; padding: 80px 40px; z-index: 2;}
+  .menu li{display: block}
+  .menu li a{padding: 15px 30px; font-size: 150%;}
+
+  .menu--open{right: 0;}
+
+  .hamburger{
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    top: auto;
+    right: 30px;
+    z-index: 2;
+  }
+
+  .hamburger span{background: #fff; height: 5px; width: 100%; border-radius: 6px; display: block; margin-bottom: 8px;}
+
+}
+
+/*==============
+    Parallax
+ =============*/
+
+.parallax {
+  position: relative;
+  width: 100%;
+  height: max(100vh, 85vh + 35vw);
+  padding:100px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.parallax img{
+  position: absolute;
+	top: 0;
+  transform: translateX(-50%);
+  left: 50%;
+	width: 100%;
+	height: max(100vh, 85vh + 35vw);
+	object-fit: cover;
+	pointer-events: none;
+}
+
+
+/*==============
+  Prima sezione
+ =============*/
+
+/*
+.base__1, .base__2 {
+  align-items: center;
+}
+
+.base__2 {
+  align-content: center;
+}
+*/
+
+#finestra {
+  height: calc(50vh + 15vw);
+  flex-shrink: 1;
+  perspective: 300px;
+  transform-style: preserve-3d;
+  transform: translateZ(-300px);
+}
+
+.diversi__content {
+  max-width: 100%;
+  width: 30%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.chiami__content {
+  position: relative;
+  max-width: 100%;
+  width: 50%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+
+
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

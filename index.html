@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- Pagina -->
+    <title>Unione Deista Italiana</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Fogli di stile CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/parallax.css">
+
+    <!-- Google Font Domine -->
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Scroll Reveal Effects -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+
+  </head>
+  <body>
+
+    <div class="cursor"></div>
+
+    <div class="bg_header">
+      <header>
+        <div class="logo">
+          <img src="img/logo.png" alt="" style="max-height: 80px;">
+        </div>
+        <ul class="menu">
+          <li><a href="">Home</a></li>
+          <li><a href="">Deismo</a></li>
+          <li><a href="">UDI</a></li>
+          <li><a href="">Comunicati</a></li>
+          <li><a href="">8x1000</a></li>
+          <li><a href="">Contatti</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </header>
+    </div>
+
+    <hero class="parallax">
+      <img src="img/parallax_cielo.png" id="cielo">
+      <img src="img/parallax_montagne.png" id="montagne">
+      <img src="img/parallax_casolare.png" id="casolare">
+      <img src="img/parallax_ragazza.png" id="ragazza">
+    </hero>
+
+    <section class="mattoni">
+      <img src="img/vetrata_imetodi.png" id="finestra">
+      <div class="diversi__content reveal-right">
+        <h1 class="med-text">Noi siamo diversi</h1>
+        <p><br>Deista è chi si interroga e giunge a credere nella pura e semplice esistenza di Dio, vedendo la natura come frutto del suo operato.<br>Il Deismo non si basa sulla rivelazione ai profeti e non ha testi sacri, per questo il culto e l’influenza di Dio sull’uomo sono a libera interpretazione del singolo deista.</p>
+        <a href="" class="button">Scopri il Deismo</a>
+      </div>
+    </section>
+
+    <section class="colore">
+      <div class="cardcontainer">
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front" style="background-image: url(img/Einstein.png)"></div>
+            <div class="card-back">
+              <p>Albert Einstein</p>
+              <span></span>
+              <p>Essere Illimitato Superiore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front" style="background-image: url(img/Voltaire.png)"></div>
+            <div class="card-back">
+              <p>Voltaire</p>
+              <span></span>
+              <p>Grande Orologiaio</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front" style="background-image: url(img/Cartesio.png)"></div>
+            <div class="card-back">
+              <p>Renato Cartesio</p>
+              <span></span>
+              <p>Sostanza</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front" style="background-image: url(img/Bruno.png)"></div>
+            <div class="card-back">
+              <p>Giordano Bruno</p>
+              <span></span>
+              <p>Anima del<br>Mondo</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front" style="background-image: url(img/Aristotele.png)"></div>
+            <div class="card-back">
+              <p>Aristotele</p>
+              <span></span>
+              <p>Motore Primo</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="chiami__content reveal-right">
+        <h1 class="med-text">Chiamalo come vuoi</h1>
+        <p><br>Non importa come lo chiami se per te esiste.<br>Non si è deisti per appartenenza ad una fazione ma ad un pensiero: credere che qualcosa più in alto di noi esista, senza scopi politici e senza la pretesa di possedere la verità assoluta.<br>Per questo il Deismo è trasversale e ha origini antiche quanto le religioni rivelate.<br>Inoltre al suo interno coesistono diverse correnti.</p>
+        <a href="" class="button">Scopri le correnti</a>
+      </div>
+    </section>
+
+
+    <!--- Javascript --->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/parallax.js"></script>
+    <script type="text/javascript" src="js/cursor.js"></script>
+    <script type="text/javascript" src="js/effects.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        /* Open Panel */
+        $(".hamburger").on("click", function() {
+          $(".menu").toggleClass("menu--open");
+        });
+      });
+    </script>
+
+  </body>
+</html>
